@@ -1,6 +1,10 @@
 <root name="applicationContext">
 
-    <state id="assemblingEnd" ref="applicationContext.state.ASSEMBLING_END">
-        <enter command-class="mock.MacroWithAnnotation" fire-once="true" />
-    </state>
+    <div id="div" type="js.Browser" static-ref="document" factory="querySelector">
+        <argument value="#test"/>
+    </div>
+
+    <log id="logDiv" type="Logger" factory="LOG">
+        <argument ref="div"/>
+    </log>
 </root>
