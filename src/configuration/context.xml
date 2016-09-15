@@ -1,0 +1,6 @@
+<root name="applicationContext">
+
+    <state id="assemblingEnd" ref="applicationContext.state.ASSEMBLING_END">
+        <enter command-class="mock.MacroWithAnnotation" fire-once="true" />
+    </state>
+</root>

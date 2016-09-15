@@ -1,0 +1,15 @@
+-cp ./src
+
+-main Main
+
+-lib hexcore
+-lib hexannotation
+-lib hexinject
+-lib hexmvc
+-lib hexstate
+-lib hexservice
+-lib hexioc
+
+-js ./bin/main.js
+
+-debug
