@@ -1,0 +1,6 @@
+package mock;
+
+interface IMockService
+{
+    
+}

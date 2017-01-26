@@ -1,10 +1,30 @@
 <root name="applicationContext">
+<!--
+    <service id="myService" type="mock.MockService" />
+-->
+    <service id="myService" type="mock.MockService" map-type="mock.IMockService"/>
+<!--
+    <config id="config" type="hex.ioc.di.MappingConfiguration">
+        <item> <key type="Class" value="mock.IMockService"/> <value ref="myService"/></item>
+    </config>
 
-    <div id="div" type="js.Browser" static-ref="document" factory="querySelector">
-        <argument value="#test"/>
-    </div>
-
-    <log id="logDiv" type="Logger" factory="LOG">
-        <argument ref="div"/>
-    </log>
+    <module id="module1" type="mock.MockModule">
+        <argument ref="config" />
+        <listen ref="myService">
+            <event static-ref="mock.MockMessage.EVENT" method="onUpdate"/>
+        </listen>
+    </module>
+-->
+    <module id="module2" type="mock.MockModule">
+        <listen ref="myService">
+            <event static-ref="mock.MockMessage.EVENT" method="onUpdate"/>
+        </listen>
+    </module>
+<!--
+    <trigger id="contextTrigger" type="Object">
+        <listen ref="myService">
+            <event static-ref="mock.MockMessage.EVENT" strategy="mock.MockAdapterStrategyMacro"/>
+        </listen>
+    </trigger>
+-->
 </root>

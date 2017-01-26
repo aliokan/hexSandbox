@@ -3,11 +3,14 @@
 -main Main
 
 -lib hexcore
+-lib hexunit
+-lib hexreflection
 -lib hexannotation
 -lib hexinject
--lib hexmvc
--lib hexstate
+-lib hexdsl
 -lib hexservice
+-lib hexstate
+-lib hexmvc
 -lib hexioc
 
 -js ./bin/main.js
